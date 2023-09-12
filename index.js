@@ -5,8 +5,9 @@ const logger = require('morgan');
 const cors = require('cors');
 const swaggerUI = require('swagger-ui-express');
 const swaggerOptions = { customCssUrl: '/swagger-ui.css' }
-const routes = require('./src/routes');
-const authDocProduction = require('./src/middlewares/authDoc');
+const routes = require('./src/routes.js');
+const authDocProduction = require('./src/middlewares/authDoc.js');
+
 const app = express();
 require('dotenv').config();
 
