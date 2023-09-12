@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const connectBD = require('../middlewares/connectBD');
-const ARTICLES = require('../models/articles')
+const ARTICLES = require('../models/articles');
 
 
 router.get('/:id', connectBD, async function (req, res) {
