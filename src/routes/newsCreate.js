@@ -6,7 +6,7 @@ const articleSchema = require('../models/articles')
 
 
 /* GET news listing. */
-router.post('/create', connectBD, async function (req, res) {
+router.post('/', connectBD, async function (req, res) {
   try {
     const RESPONSE_API = await axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.KEY_API}`)
 

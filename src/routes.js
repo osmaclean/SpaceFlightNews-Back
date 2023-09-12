@@ -1,6 +1,6 @@
 function routes(app) {
-  app.use('/users', require('./routes/users'));
-  app.use('/news', require('./routes/news'));
+  app.use('/get/news', require('./routes/getNews'));
+  app.use('/news/create', require('./routes/newsCreate'));
   return;
 }
 
