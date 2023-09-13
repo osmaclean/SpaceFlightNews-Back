@@ -12,7 +12,7 @@ let doc = {
   info: {
     version: "1.0.0",
     title: "API Space Flight News",
-    description: "Documentação da API Space Flight News"
+    description: "Fullstack Challenge 2023 🏅 - Space Flight News"
   },
   servers: [
     {
@@ -20,7 +20,7 @@ let doc = {
       description: "Servidor localhost"
     },
     {
-      url: "https://board-tasks-back-dnc.vercel.app/",
+      url: "https://space-flight-news-back.vercel.app/",
       description: "Servidor de produção"
     }
   ],
