@@ -8,13 +8,13 @@ router.post('/', connectBD, async function (req, res) {
   try {
     // #swagger.tags = ['Articles']
     // #swagger.description = "Endpoint to create articles and send to the database."
-    const RESPONSE_API = await axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.KEY_API}`)
+    const responseApi = await axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.KEY_API}`)
 
-    if (RESPONSE_API.status === 200 && RESPONSE_API.data.status == 'ok') {
-      const DATA = RESPONSE_API.data
-      const ARTICLES = DATA.articles
+    if (responseApi.status === 200 && responseApi.data.status == 'ok') {
+      const dataRes = responseApi.data
+      const articlesRes = dataRes.articles
 
-      ARTICLES.forEach(element => {
+      articlesRes.forEach(element => {
         let sourceId = element.source.id
         let sourceName = element.source.name
         let author = element.author

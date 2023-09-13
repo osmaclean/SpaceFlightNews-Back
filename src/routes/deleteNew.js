@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ARTICLES = require('../models/articles');
+const article = require('../models/articles');
 const connectDB = require('../middlewares/connectBD');
 
 router.delete('/:id', connectDB, async function (req, res) {
@@ -8,7 +8,7 @@ router.delete('/:id', connectDB, async function (req, res) {
     // #swagger.tags = ['Article']
     // #swagger.description = "Endpoint to delete an article in the database."
     let idArticle = req.params.id;
-    const checkArticles = await ARTICLES.findOne({ _id: idArticle }).deleteOne({ _id: idArticle });
+    const checkArticles = await article.findOne({ _id: idArticle }).deleteOne({ _id: idArticle });
 
     if (!checkArticles) throw new Error('Article not found!');
 

@@ -1,6 +1,6 @@
-const MONGOOSE = require('mongoose');
+const mongoose = require('mongoose');
 
-const esquema = new MONGOOSE.Schema({
+const esquema = new mongoose.Schema({
   sourceId: {
     type: String,
     required: 'É obrigatório!',
@@ -33,6 +33,6 @@ const esquema = new MONGOOSE.Schema({
 
 }, { timestamps: true });
 
-const EsquemaArticle = MONGOOSE.models.Article || MONGOOSE.model('Article', esquema);
+const EsquemaArticle = mongoose.models.Article || mongoose.model('Article', esquema);
 
 module.exports = EsquemaArticle;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const connectBD = require('../middlewares/connectBD');
-const ARTICLES = require('../models/articles');
+const articles = require('../models/articles');
 
 
 router.get('/:id', connectBD, async function (req, res) {
@@ -9,9 +9,9 @@ router.get('/:id', connectBD, async function (req, res) {
     // #swagger.tags = ['Article']
     // #swagger.description = "Endpoint to get an article from the database."
     let idArticle = req.params.id;
-    const checkArticles = await ARTICLES.findOne({ _id: idArticle });
+    const checkArticles = await articles.findOne({ _id: idArticle });
 
-    if (!checkArticles) throw new Error('Article not found!');
+    if (!checkArticles) res.status(404).json({ message: "Article not found" });
 
     res.status(200).json({
       status: "ok",
