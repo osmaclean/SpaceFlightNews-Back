@@ -4,8 +4,6 @@ const axios = require('axios');
 const connectBD = require('../middlewares/connectBD');
 const articleSchema = require('../models/articles')
 
-
-/* GET news listing. */
 router.post('/', connectBD, async function (req, res) {
   try {
     // #swagger.tags = ['Articles']

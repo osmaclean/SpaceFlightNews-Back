@@ -7,7 +7,7 @@ const ARTICLES = require('../models/articles');
 router.get('/:id', connectBD, async function (req, res) {
   try {
     // #swagger.tags = ['Article']
-    // #swagger.description = "Endpoint to get an article from the database"
+    // #swagger.description = "Endpoint to get an article from the database."
     let idArticle = req.params.id;
     const checkArticles = await ARTICLES.findOne({ _id: idArticle });
 
