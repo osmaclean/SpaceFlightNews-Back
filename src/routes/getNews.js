@@ -6,8 +6,8 @@ const ARTICLES = require('../models/articles')
 /* GET users listing. */
 router.get('/', connectBD, async function (req, res) {
   try {
-    // #swagger.tags = ['Artigos']
-    // #swagger.description = "Endpoint para obter todos os artigo do banco de dados."
+    // #swagger.tags = ['Articles]
+    // #swagger.description = "Endpoint to get all articles from the database."
     const responseDB = await ARTICLES.find({});
 
     res.status(200).json({ status: "ok", statusMessage: "Articles listed successfully!", response: responseDB })

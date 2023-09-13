@@ -8,8 +8,8 @@ const articleSchema = require('../models/articles')
 /* GET news listing. */
 router.post('/', connectBD, async function (req, res) {
   try {
-    // #swagger.tags = ['Artigos']
-    // #swagger.description = "Endpoint para criar os artigos e enviar para o banco de dados."
+    // #swagger.tags = ['Articles']
+    // #swagger.description = "Endpoint to create articles and send to the database."
     const RESPONSE_API = await axios.get(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${process.env.KEY_API}`)
 
     if (RESPONSE_API.status === 200 && RESPONSE_API.data.status == 'ok') {
