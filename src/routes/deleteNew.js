@@ -5,6 +5,8 @@ const connectDB = require('../middlewares/connectBD');
 
 router.delete('/:id', connectDB, async function (req, res) {
   try {
+    // #swagger.tags = ['Artigo']
+    // #swagger.description = "Endpoint para deletar um artigo no banco de dados."
     let idArticle = req.params.id;
     const checkArticles = await ARTICLES.findOne({ _id: idArticle }).deleteOne({ _id: idArticle });
 
